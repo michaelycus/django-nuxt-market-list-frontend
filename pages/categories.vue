@@ -19,7 +19,12 @@
                      dark
                      class="mb-2"
                      v-bind="attrs"
-                     v-on="on">Nova Categoria</v-btn>
+                     v-on="on">
+                <v-icon>
+                  mdi-plus
+                </v-icon>
+                Nova Categoria
+              </v-btn>
             </template>
             <v-card>
               <v-card-title>
@@ -62,8 +67,9 @@
         </v-icon>
       </template>
       <template #no-data>
-        <v-btn color="primary"
-               @click="initialize">Reset</v-btn>
+        <v-alert type="info">
+          Nenhum categoria cadastrada
+        </v-alert>
       </template>
     </v-data-table>
 

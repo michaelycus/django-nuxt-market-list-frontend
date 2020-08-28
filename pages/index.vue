@@ -126,7 +126,10 @@ export default {
       if (listProducts != null) {
         JSON.parse(listProducts).forEach(product => {
           if (product.quantity > 0) {
-            this.products.find(p => p.id == product.id).quantity = product.quantity
+            let selectedProduct = this.products.find(p => p.id == product.id)
+            if (selectedProduct) {
+              selectedProduct.quantity = product.quantity
+            }
           }
         });
       }

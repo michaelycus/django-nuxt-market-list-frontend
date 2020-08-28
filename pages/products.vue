@@ -19,7 +19,12 @@
                      dark
                      class="mb-2"
                      v-bind="attrs"
-                     v-on="on">Novo Produto</v-btn>
+                     v-on="on">
+                <v-icon>
+                  mdi-plus
+                </v-icon>
+                Novo Produto
+              </v-btn>
             </template>
             <v-card>
               <v-card-title>
@@ -78,8 +83,9 @@
         </v-icon>
       </template>
       <template #no-data>
-        <v-btn color="primary"
-               @click="initialize">Reset</v-btn>
+        <v-alert type="info">
+          Nenhum produto cadastrado
+        </v-alert>
       </template>
     </v-data-table>
 
